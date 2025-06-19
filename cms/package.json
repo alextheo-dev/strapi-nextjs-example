@@ -1,0 +1,48 @@
+{
+  "name": "strapi-docker-test",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@ckeditor/strapi-plugin-ckeditor": "^0.0.13",
+    "@strapi/plugin-color-picker": "^4.25.8",
+    "@strapi/plugin-i18n": "4.24.4",
+    "@strapi/plugin-users-permissions": "4.24.4",
+    "@strapi/provider-email-nodemailer": "^4.25.3",
+    "@strapi/strapi": "4.24.4",
+    "@strapi/types": "^4.25.3",
+    "@strapi/typescript-utils": "^5.13.1",
+    "better-sqlite3": "8.6.0",
+    "google-auth-library": "^9.14.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql": "^2.18.1",
+    "passkit-generator": "^3.1.11",
+    "prettier": "^3.5.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "5.3.4",
+    "socket.io": "^4.8.1",
+    "strapi-plugin-menus": "^1.6.1",
+    "strapi-plugin-populate-deep": "^3.0.1",
+    "styled-components": "5.3.3",
+    "uuid": "^10.0.0",
+    "yup": "^1.4.0"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "ba6d5634-0a63-4e73-8455-1e8a8584fc98"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

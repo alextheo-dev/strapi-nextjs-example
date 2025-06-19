@@ -1,0 +1,76 @@
+$units: (
+  px: 'px',
+  em: 'em',
+  rem: 'rem',
+  per: '%',
+  dvw: 'dvw',
+  dvh: 'dvh',
+  auto: 'auto',
+);
+
+$positions: (
+  t: 'top',
+  r: 'right',
+  b: 'bottom',
+  l: 'left',
+);
+
+
+@for $size from 0 through 150 {
+    @each $unit, $ut in $units {
+      @each $position, $pos in $positions {
+        .m-#{$position}-#{$size}#{$unit} {
+          margin-#{$pos}: #{$size}#{$ut} !important;
+        }
+  
+        .p-#{$position}-#{$size}#{$unit} {
+          padding-#{$pos}: #{$size}#{$ut} !important;
+        }
+      }
+  
+      .m-#{$size}#{$unit} {
+        margin: #{$size}#{$ut} !important;
+      }
+  
+      .mx-#{$size}#{$unit} {
+        margin-top: #{$size}#{$ut} !important;
+        margin-bottom: #{$size}#{$ut} !important;
+      }
+  
+      .my-#{$size}#{$unit} {
+        margin-right: #{$size}#{$ut} !important;
+        margin-left: #{$size}#{$ut} !important;
+      }
+  
+      .p-#{$size}#{$unit} {
+        padding: #{$size}#{$ut} !important;
+      }
+  
+      .px-#{$size}#{$unit} {
+        padding-top: #{$size}#{$ut} !important;
+        padding-bottom: #{$size}#{$ut} !important;
+      }
+  
+      .py-#{$size}#{$unit} {
+        padding-right: #{$size}#{$ut} !important;
+        padding-left: #{$size}#{$ut} !important;
+      }
+  
+      .p-block-#{$size}#{$unit} {
+        padding-block: #{$size}#{$ut} !important;
+      }
+  
+      .m-block-#{$size}#{$unit} {
+        margin-block: #{$size}#{$ut} !important;
+      }
+  
+      .w-#{$size}#{$unit} {
+        width: #{$size}#{$ut} !important;
+      }
+  
+      .h-#{$size}#{$unit} {
+        height: #{$size}#{$ut} !important;
+      }
+    }
+  }
+  

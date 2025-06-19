@@ -1,0 +1,74 @@
+services:
+  strapi:
+    container_name: cms
+    restart: always
+    env_file:
+      - ./cms/.env
+    build:
+      target: dev
+      context: ./cms
+      dockerfile: Dockerfile
+    ports:
+      - "1337:1337"
+    networks:
+      - dev
+    volumes:
+      - ./cms:/cms:delegated
+      - /cms/node_modules
+    depends_on:
+      - strapiDB
+
+  strapiDB:
+    container_name: cms_mysql
+    restart: always
+    env_file:
+      - .env
+    image: mysql:5.7.22
+    ports:
+      - "3306:3306"
+    networks:
+      - dev
+    volumes:
+      - prodea-data:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+  front:
+    container_name: front
+    restart: always
+    env_file:
+      - .env
+    build:
+      target: dev
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "24678:24678"
+      - "3000:3000"
+    volumes:
+      - ./front:/front:delegated
+      - /app/node_modules
+    networks:
+      - dev
+    depends_on:
+      - "strapi"
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    volumes:
+      - ./proxy/nginx:/etc/nginx/conf.d
+      - ./proxy/certbot/conf:/etc/letsencrypt
+      - ./proxy/certbot/www:/var/www/certbot
+    command: '/bin/sh -c ''while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g "daemon off;"'''
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - dev
+
+volumes:
+  prodea-data:
+
+networks:
+  dev:
+    driver: bridge

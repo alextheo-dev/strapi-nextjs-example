@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Headings
+
+h1 {
+  font-size: calc(24px + (32 - 24) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(29px + (39 - 29) * ((100vw - 300px) / (1900 - 300)));
+}
+
+h2 {
+  font-size: calc(20px + (24 - 20) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(28px + (34 - 28) * ((100vw - 300px) / (1900 - 300)));
+}
+
+h3 {
+  font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(28px + (24 - 28) * ((100vw - 300px) / (1900 - 300)));
+}
+
+h4 {
+  font-size: calc(14px + (16 - 14) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(18px + (24 - 18) * ((100vw - 300px) / (1900 - 300)));
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 10px;
+}
+
+// WEIGHTS
+
+.f300 {
+  font-weight: 300;
+}
+
+.f400 {
+  font-weight: 400;
+}
+
+.f500 {
+  font-weight: 500;
+}
+
+.f600 {
+  font-weight: 600;
+}
+
+.f700 {
+  font-weight: 700;
+}
+
+.f900 {
+  font-weight: 900;
+}
+
+// Sizes
+
+.s60 {
+  font-size: calc(40px + (60 - 40) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(50px + (70 - 50) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s48 {
+  font-size: calc(24px + (48 - 24) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(32px + (59 - 32) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s40 {
+  font-size: calc(24px + (40 - 24) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(30px + (49 - 30) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s32 {
+  font-size: calc(24px + (32 - 24) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(30px + (34 - 30) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s28 {
+  font-size: calc(20px + (28 - 20) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(24px + (34 - 24) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s24 {
+  font-size: calc(18px + (24 - 18) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(29px + (30 - 29) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s22 {
+  font-size: calc(16px + (22 - 16) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(29px + (39 - 29) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s20 {
+  font-size: calc(13px + (20 - 13) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(16px + (25 - 16) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s18 {
+  font-size: calc(18px + (18 - 18) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(24px + (24 - 24) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s16 {
+  font-size: calc(16px + (16 - 16) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(25px + (24 - 25) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s15 {
+  font-size: calc(15px + (15 - 15) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(18px + (18 - 18) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s14 {
+  font-size: calc(14px + (14 - 14) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(18px + (18 - 18) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s13 {
+  font-size: calc(10px + (13 - 10) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(20px + (22 - 20) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s12 {
+  font-size: calc(10px + (12 - 10) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(20px + (22 - 20) * ((100vw - 300px) / (1900 - 300)));
+}
+
+.s11 {
+  font-size: calc(10px + (11 - 10) * ((100vw - 300px) / (1900 - 300)));
+  line-height: calc(20px + (22 - 20) * ((100vw - 300px) / (1900 - 300)));
+}
