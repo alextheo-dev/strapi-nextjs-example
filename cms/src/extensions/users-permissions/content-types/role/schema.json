@@ -1,96 +1,49 @@
 {
   "kind": "collectionType",
-  "collectionName": "up_users",
+  "collectionName": "up_roles",
   "info": {
-    "name": "user",
+    "name": "role",
     "description": "",
-    "singularName": "user",
-    "pluralName": "users",
-    "displayName": "User"
+    "singularName": "role",
+    "pluralName": "roles",
+    "displayName": "Role"
   },
-  "options": {
-    "draftAndPublish": false
+  "pluginOptions": {
+    "content-manager": {
+      "visible": false
+    },
+    "content-type-builder": {
+      "visible": false
+    }
   },
   "attributes": {
-    "username": {
+    "name": {
       "type": "string",
       "minLength": 3,
+      "required": true,
+      "configurable": false
+    },
+    "description": {
+      "type": "string",
+      "configurable": false
+    },
+    "type": {
+      "type": "string",
       "unique": true,
-      "configurable": false,
-      "required": true
-    },
-    "email": {
-      "type": "email",
-      "minLength": 6,
-      "configurable": false,
-      "required": true
-    },
-    "provider": {
-      "type": "string",
       "configurable": false
     },
-    "password": {
-      "type": "password",
-      "minLength": 6,
-      "configurable": false,
-      "private": true,
-      "searchable": false
-    },
-    "resetPasswordToken": {
-      "type": "string",
-      "configurable": false,
-      "private": true,
-      "searchable": false
-    },
-    "confirmationToken": {
-      "type": "string",
-      "configurable": false,
-      "private": true,
-      "searchable": false
-    },
-    "confirmed": {
-      "type": "boolean",
-      "default": false,
+    "permissions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.permission",
+      "mappedBy": "role",
       "configurable": false
     },
-    "blocked": {
-      "type": "boolean",
-      "default": false,
-      "configurable": false
-    },
-    "role": {
+    "users": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.role",
-      "inversedBy": "users"
-    },
-    "first_name": {
-      "type": "string",
-      "minLength": 2,
-      "required": true
-    },
-    "last_name": {
-      "type": "string",
-      "minLength": 2,
-      "required": true
-    },
-    "group": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::group.group",
-      "inversedBy": "user"
-    },
-    "business_unit": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::business-unit.business-unit",
-      "inversedBy": "users"
-    },
-    "project": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::project.project",
-      "inversedBy": "users"
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "role"
     }
   }
 }
