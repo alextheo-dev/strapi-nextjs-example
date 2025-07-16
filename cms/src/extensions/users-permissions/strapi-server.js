@@ -4,6 +4,17 @@ module.exports = plugin => {
     return sanitizedUser;
   };
 
+  plugin.routes['content-api'].routes.push({
+    method: 'POST',
+    path: '/users/data',
+    handler: 'user.data',
+    config: {
+      prefix: '',
+    },
+  });
+
+  console.log(JSON.stringify(plugin.routes['content-api'].routes, null, 2));
+
   plugin.controllers.auth.callback = async ctx => {
     const { identifier, password } = ctx.request.body;
 
@@ -41,7 +52,6 @@ module.exports = plugin => {
     ctx.body = {
       jwt,
       user: sanitizeOutput(validUser),
-      customField: 'your custom value',
     };
   };
 
@@ -58,6 +68,10 @@ module.exports = plugin => {
     const users = await strapi.entityService.findMany('plugin::users-permissions.user', { ...ctx.params, populate: ['role'] });
 
     ctx.body = users.map(user => sanitizeOutput(user));
+  };
+
+  plugin.controllers.user.data = async ctx => {
+    ctx.body = 'data';
   };
 
   return plugin;
